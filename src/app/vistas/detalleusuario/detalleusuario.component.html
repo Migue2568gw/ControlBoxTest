@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="container">   
+    <br>
+    <div class="card">
+        <div class="card-header">
+            <strong>Detalle del Usuario</strong>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ usuario?.name }}</h5>
+            <p class="card-text"><strong>Username:</strong>  {{ usuario?.username }}</p>
+            <p class="card-text"><strong>Email: </strong>{{ usuario?.email }}</p>
+            <p class="card-text"><strong>Dirección:</strong> {{ usuario?.address?.street }}, {{ usuario?.address?.suite }}, {{
+                usuario?.address?.city }}, {{ usuario?.address?.zipcode }}</p>
+            <p class="card-text"><strong>Teléfono:</strong> {{ usuario?.phone }}</p>
+            <p class="card-text"><strong>Empresa:</strong> {{ usuario?.company?.name }}</p>
+            <p class="card-text"><strong>Catchphrase: </strong>{{ usuario?.company?.catchPhrase }}</p>
+        </div>
+    </div>
+
+    <br><button type="button" class="btn btn-dark" (click)="volver()">Volver</button>
+    <button type="button" class="btn btn-danger" (click)="usuario && usuario.id && EliminarUsuario(usuario.id)">Eliminar</button>
+</div>
+
+<app-footer></app-footer>
